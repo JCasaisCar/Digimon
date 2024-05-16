@@ -16,8 +16,11 @@ public class Principal {
 
 				boolean salirmenu = true;
 				int nMenu;
+				String nombreDomador;
 
 				System.out.println("Bienvenid@ a LA BATALLA DE LOS DIGIMON");
+				System.out.println("Dime tu nombre de domador:");
+				nombreDomador = leer.next();
 				while (salirmenu) {
 					
 					System.out.println("¿Que te apetece hacer?");
