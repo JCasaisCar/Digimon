@@ -4,6 +4,12 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Principal {
+	
+	public static boolean validarNombre(String nombre) {
+		//Expresión regular para comprobar si el nombre es correcto
+		String expr = "[a-zA-ZáéíóúüÁÉÍÓÚÜñÑ\\s]+";
+		return nombre != null && nombre.matches(expr);
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -19,8 +25,16 @@ public class Principal {
 				String nombreDomador;
 
 				System.out.println("Bienvenid@ a LA BATALLA DE LOS DIGIMON");
+				
 				System.out.println("Dime tu nombre de domador:");
-				nombreDomador = leer.next();
+				nombreDomador = leer.nextLine();
+				while (!validarNombre(nombreDomador)) {
+					System.out.println("Nombre Incorrecto");
+					System.out.println("Dime otra vez tu nombre de domador:");
+					nombreDomador = leer.nextLine();
+				}
+				
+				
 				while (salirmenu) {
 					
 					System.out.println("¿Que te apetece hacer?");
