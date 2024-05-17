@@ -2,6 +2,7 @@ package principal;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.Random;
 
 public class Principal {
 	
@@ -13,7 +14,6 @@ public class Principal {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
 		
 		boolean salir = true;
 		while (salir) {
@@ -34,27 +34,25 @@ public class Principal {
 					nombreDomador = leer.nextLine();
 				}
 				
-				
+				Domador domador = new Domador(nombreDomador);
+
 				while (salirmenu) {
 					
 					System.out.println("¿Que te apetece hacer?");
 					System.out.println("1. Iniciar batalla");
 					System.out.println("2. Salir");
-					nMenu = (int) leer.nextFloat();
+					nMenu = leer.nextInt();
 
 					switch (nMenu) {
 					case 1:
 						System.out.println("Has elegido la opción 1");
-
-						
-
+                        BatallaDigital batalla = new BatallaDigital(domador);
+                        batalla.iniciarBatalla();
 						break;
 					case 2:
 						System.out.println("Has elegido la opción 2");
-						System.out.println("As salido del programa!!");
-
+						System.out.println("Has salido del programa!!");
 						salirmenu = false;
-
 						break;
 					default:
 						System.out.println("La opción seleccionada no existe, escribela otra vez");
@@ -72,3 +70,4 @@ public class Principal {
 	}
 
 }
+

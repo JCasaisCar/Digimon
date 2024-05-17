@@ -11,14 +11,7 @@ public class Digimon {
     int DP2;
 
     public Digimon(String nombre, int nivel) {
-    	String[] nombres = {"Agumon", "Gabumon", "Patamon"};
-        
-        // Generar un índice aleatorio para seleccionar un nombre
-        int indiceAleatorio = new Random().nextInt(nombres.length);
-        
-        // Obtener el nombre aleatorio
-        String nombreAleatorio = nombres[indiceAleatorio];
-    	this.nombre = nombre;
+        this.nombre = nombre;
         this.nivel = nivel;
         this.puntosAtaque = nivel * 5;
         this.salud = nivel * 10;
