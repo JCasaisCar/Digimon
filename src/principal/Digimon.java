@@ -4,6 +4,7 @@ package principal;
  * Clase que representa un Digimon.
  * 
  * @autor JCasaisCar
+ * @version 1.0
  */
 public class Digimon {
     String nombre;

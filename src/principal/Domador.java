@@ -4,6 +4,7 @@ package principal;
  * Clase que representa a un domador de Digimon.
  * 
  * @autor JCasaisCar
+ * @version 1.0
  */
 public class Domador {
     String nombre;

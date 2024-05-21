@@ -7,6 +7,7 @@ import java.util.Scanner;
  * Clase principal para ejecutar el programa de la Batalla de los Digimon.
  * 
  * @autor JCasaisCar
+ * @version 1.0
  */
 public class Principal {
 
