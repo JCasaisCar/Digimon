@@ -2,10 +2,9 @@ package principal;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.Random;
 
 public class Principal {
-	
+
 	public static boolean validarNombre(String nombre) {
 		//Expresión regular para comprobar si el nombre es correcto
 		String expr = "[a-zA-ZáéíóúüÁÉÍÓÚÜñÑ\\s]+";
@@ -13,19 +12,18 @@ public class Principal {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
+		//Creamos un solo Scanner para toda la aplicación para que no nos de errores al cerralo
+		Scanner leer = new Scanner(System.in);
+
 		boolean salir = true;
 		while (salir) {
 			try {
-				Scanner leer = new Scanner(System.in);
-
 				boolean salirmenu = true;
 				int nMenu;
 				String nombreDomador;
 
 				System.out.println("Bienvenid@ a LA BATALLA DE LOS DIGIMON");
-				
+
 				System.out.println("Dime tu nombre de domador:");
 				nombreDomador = leer.nextLine();
 				while (!validarNombre(nombreDomador)) {
@@ -33,11 +31,11 @@ public class Principal {
 					System.out.println("Dime otra vez tu nombre de domador:");
 					nombreDomador = leer.nextLine();
 				}
-				
+
 				Domador domador = new Domador(nombreDomador);
 
 				while (salirmenu) {
-					
+
 					System.out.println("¿Que te apetece hacer?");
 					System.out.println("1. Iniciar batalla");
 					System.out.println("2. Salir");
@@ -46,8 +44,8 @@ public class Principal {
 					switch (nMenu) {
 					case 1:
 						System.out.println("Has elegido la opción 1");
-                        BatallaDigital batalla = new BatallaDigital(domador);
-                        batalla.iniciarBatalla();
+						BatallaDigital batalla = new BatallaDigital(domador, leer);
+						batalla.iniciarBatalla();
 						break;
 					case 2:
 						System.out.println("Has elegido la opción 2");
@@ -60,14 +58,14 @@ public class Principal {
 				}
 
 				salir = false;
-				leer.close();
 
 			} catch (InputMismatchException e) {
 				System.out.println("Entrada no válida");
 				System.out.println("Empezamos de nuevo!!");
+				leer.nextLine(); //Limpiamos el buffer
 			}
 		}
+		leer.close(); //Cerramos el Scanner al final del programa para evitar errores
 	}
 
 }
-
