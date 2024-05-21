@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Clase que gestiona la batalla digital entre el domador y un Digimon enemigo.
  * 
- * @autor JCasaisCar
+ * @author JCasaisCar
  * @version 1.0
  */
 public class BatallaDigital {
